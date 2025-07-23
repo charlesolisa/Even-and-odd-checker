@@ -66,6 +66,18 @@ def set_styles():
         background-color: #f4f6f7;
     }}
 
+    section[data-testid="stSidebar"] {{
+        background-color: #e0e0e0 !important; /* ash gray */
+        color: black !important;
+        padding: 20px;
+        border-radius: 0 20px 20px 0;
+    }}
+
+    section[data-testid="stSidebar"] * {{
+        color: black !important;
+        font-weight: bold;
+    }}
+
     .white-box {{
         background-color: white;
         padding: 25px;
