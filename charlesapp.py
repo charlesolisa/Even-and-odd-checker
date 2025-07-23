@@ -63,7 +63,7 @@ def set_styles():
     }}
 
     .stApp {{
-        background-color: #f4f6f7; /* Clean background */
+        background-color: #f4f6f7;
     }}
 
     .white-box {{
@@ -171,7 +171,7 @@ def even_odd_app():
 
 # -------------------- Main App --------------------
 def main_app():
-    settings_panel()  # show sidebar settings
+    settings_panel()
 
     st.markdown(f"""
     <div class='white-box'>
@@ -196,11 +196,14 @@ if st.session_state.get("login_time"):
         st.warning("Session expired. Please log in again.")
         logout()
 
+# Navigation based on login status
 if st.session_state.logged_in:
     main_app()
 else:
-    menu = st.radio("Navigation", ["Login", "Register"])
-    if menu == "Register":
+    st.sidebar.markdown("## 📌 Navigation")
+    nav_choice = st.sidebar.radio("Go to", ["Login", "Register"])
+
+    if nav_choice == "Register":
         register_page()
     else:
         login_page()
